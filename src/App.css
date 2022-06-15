@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+
+p {
+  color: red;
+}
+
+.flex-element {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+#data {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  margin-top: 30px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+#data td, #data th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#data tr:nth-child(even){background-color: #f2f2f2;}
+
+#data tr:hover {background-color: #ddd;}
+
+#data th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
