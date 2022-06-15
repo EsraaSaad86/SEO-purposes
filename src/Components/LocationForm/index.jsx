@@ -3,10 +3,10 @@ import getGeoJsonData from '../../Services/getLocationData';
 
 function LocationForm() {
   const initialValues = {
-    left: '0.0',
-    bottom: '0.0',
-    right: '0.0',
-    top: '0.0',
+    left: '',
+    bottom: '',
+    right: '',
+    top: '',
   };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -57,6 +57,7 @@ function LocationForm() {
   return (
     <div>
       <form
+        role='form'
         onSubmit={(e) => {
           handleSubmit(e);
         }}
@@ -64,6 +65,8 @@ function LocationForm() {
         <div className='flex-element'>
           <label>min Longitude(left)</label>
           <input
+            role='input'
+            aria-label='left'
             name='left'
             type='number'
             min='-180.0'
@@ -80,6 +83,8 @@ function LocationForm() {
         <div className='flex-element'>
           <label>min Latitude(bottom)</label>
           <input
+            role='input'
+            aria-label='bottom'
             name='bottom'
             type='number'
             min='-90.0'
@@ -96,6 +101,8 @@ function LocationForm() {
         <div className='flex-element'>
           <label>max Longitude(right)</label>
           <input
+            role='input'
+            aria-label='right'
             name='right'
             type='number'
             min='-180.0'
@@ -110,6 +117,8 @@ function LocationForm() {
         <div className='flex-element'>
           <label>max Latitude(top)</label>
           <input
+            role='input'
+            aria-label='top'
             name='top'
             type='number'
             min='-90.0'
@@ -122,6 +131,8 @@ function LocationForm() {
         </div>
 
         <input
+          role='button'
+          aria-label='Submit'
           className='submitButton'
           type='submit'
           value='Get Location Data'
@@ -130,7 +141,7 @@ function LocationForm() {
 
       {locationData.length > 0 ? (
         <div>
-          <table id='data'>
+          <table id='data' role='table' aria-label='Data Table'>
             <thead>
               <tr>
                 <th>Type</th>

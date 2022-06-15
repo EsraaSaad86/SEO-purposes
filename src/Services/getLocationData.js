@@ -1,5 +1,5 @@
 import axios from 'axios';
-import osmtogeojson from 'osmtogeojson';
+import { convertToGeoJsonData } from './osmDataConverter';
 
 const url = 'https://www.openstreetmap.org/api/0.6/map';
 
@@ -12,7 +12,7 @@ const getGeoJsonData = async (values) => {
       }
     )
     .then((response) => {
-      return osmtogeojson(response.data);
+      return convertToGeoJsonData(response.data);
     })
     .catch((error) => {
       return Promise.reject(error.response);
